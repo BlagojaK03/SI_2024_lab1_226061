@@ -1,0 +1,144 @@
+4. 
+Откако е направен директориумот, се извршува следната команда во него: git init
+
+5. 
+git remote add origin https://github.com/BlagojaK03/SI_2024_lab1_226061.git
+
+6. 
+echo "Blagoja Karakashev 226061" >> README.md 	- се креира фајлот README.md со содржина Blagoja Karakashev 226061
+git add README.md 				- се додава README.md во локалниот репозиториум
+git commit -m "Initial commit" 			- се прави commit со дадената порака 
+
+7. 
+Откако се додадени фајловите во директориумот, се додават во локалниот репозиториум и се прави commit со следните команди:
+- git add *.java				- се додават сите .java фајлови во сегашниот директориум
+- git commit -m "Add starter code"		- се прави commit
+
+8.
+git push -u origin master 			- се додаваат сите commit-и од локалниот до оддалечениот репозиториум
+
+9. 
+git branch bug1
+git branch bug2
+
+Со 'git branch [branchname]' командата, се разгрануваме од моменталната гранка во која се наоѓаме (во нашиот случај е master гранката) и се отвара нова гранка со името [branchname]. 
+
+10.
+git checkout bug1 	- HEAD-от се преместува кај последниот commit на bug1 гранката
+
+11. 
+Откако се поправи грешката во методот во SILab1_1.java, не е лошо да се провери дали git ја детектира промената на тој фајл. За таа цел, се користи командата 'git status' и следното треба да излезе на екран:
+
+On branch bug1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   SILab1_1.java
+
+Сега, со 'git add SILab1_1.java' фајлот преминува во состојба "staged" каде потоа може да ја извршиме командата 'git commit -m "Fix wrong condition in filterOddLengthStrings"'. Тој commit сега постои само кај bug1 гранката и вака треба да изгледа излезот по извршување на 'git commit' командата:
+
+[bug1 f67c475] Fix wrong condition in filterOddLengthStrings
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+12.
+git checkout bug2 	- HEAD-от се преместува кај последниот commit на bug1 гранката
+
+13. 
+Речиси истото го правиме тука како и во 11. 
+Се поправа грешката во методот во SILab1_2.java и проверуваме дали git ја детектира таа промена:
+
+$ git status
+On branch bug2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   SILab1_2.java
+
+Потоа, се додава промената во репозиториумот и се прави commit:
+
+$ git add SILab1_2.java
+$ git commit -m "Fix wrong condition in makeBigStringFrom"
+[bug2 0fc9b24] Fix wrong condition in makeBigStringFrom
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Сега вака треба да изгледат состојбите на сите гранки (git branch -v):
+  bug1   f67c475 Fix wrong condition in filterOddLengthStrings
+* bug2   0fc9b24 Fix wrong condition in makeBigStringFrom
+  master 2153ee1 Add starter code
+
+За наредните чекори каде се променуваат фајлови нема да ја спомнам 'git status' командата во документацијата, но сепак ќе се користи за да провериме дали git ги препознава промените на фајловите.
+
+14.
+git checkout bug1
+
+15.
+git add SILab1Main.java
+git commit -m "Call method filterOddLengthStrings in main class"
+
+16.
+git checkout bug2
+
+17.
+git add SILab1Main.java
+git commit -m "Call method makeBigStringFrom in main class"
+
+18.
+Тука можеме да направиме посебни 'git push origin [branchname]' на сите гранки. Меѓутоа, подобро е да се користи 'git push origin --all' за да се додадат сите гранки од локалниот во оддалечениот репозиториум со една команда.
+
+19.
+git checkout master
+
+20.
+Со командата 'git merge bug1' кога HEAD-от е во master гранката, ги спојуваме commit-ите од bug1 во master гранката.
+По извршување на оваа команда, не се случиле конфликти бидејќи bug1 се разгранил од master гранката после последниот commit во неа. Исто така, стратегијата употребена за да се изврши спојувањето е fast-forward, и тоа го кажува и git како излез после 'git merge' командата:
+
+Updating 2153ee1..e3b455b
+Fast-forward
+ SILab1Main.java | 1 +
+ SILab1_1.java   | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+21.
+git push origin --all
+
+22.
+git checkout bug2
+
+23.
+Додека HEAD-от е во bug2 гранката, со командата 'git rebase master' ќе се направи rebase на гранката bug2 спрема master.
+При извршување на командата се појави грешка бидејќи има конфликт во SILab1Main.java. Станува збор за две различни промени во истата линија код.
+Оттука, понудените начини да се реши овој конфликт од git се:
+- заменување на commit-от во кој стое верзијата на фајлот во master со оној во bug2 
+(git add SILab1Main.java -> git rebase --continue)
+- прескокнување на commit-от каде стои таа промена
+(git rebase --skip)
+или
+- враќање во првобитната состојба, пред да се изврши 'git rebase'
+(git rebase --abort)
+
+Во оваа документација, ќе одиме со првата опција, односно замената.
+
+24.
+git checkout master
+
+25.
+Слично како во 20, ги спојуваме commit-ите од bug2 во master гранката со командата 'git merge bug2'.
+Не се појавиле конфликти при извршување на командата поради rebase-от што бил направен претходно. Стратегијата на спојување е повторно fast-forward:
+
+Updating e3b455b..0764388
+Fast-forward
+ SILab1Main.java | 4 ++++
+ SILab1_2.java   | 2 +-
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+
+26.
+git push origin --all
+
+27.
+git push origin --force bug2
+
+28.
+git add logs.txt 226061.txt
+git commit -m "Final commit"
+
+29.
+git push origin --all

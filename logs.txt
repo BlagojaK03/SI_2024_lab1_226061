@@ -1,0 +1,97 @@
+$ git log master
+commit 0764388a39df19ccdf30d431e7c3d9a03f07d1b2 (HEAD -> master, origin/master, origin/bug2, bug2)
+Author: Blagoja Karakashev <154978538+BlagojaK03@users.noreply.github.com>
+Date:   Wed Apr 10 01:48:36 2024 +0200
+
+    Call method makeBigStringFrom in main class
+
+commit 88dd26163e9dec734f584f144a69007afb944fae
+Date:   Wed Apr 10 01:24:16 2024 +0200
+
+    Fix wrong condition in makeBigStringFrom
+
+commit e3b455bdafb9d299f65403304c35d120a824fbdd (origin/bug1, bug1)
+Author: Blagoja Karakashev <154978538+BlagojaK03@users.noreply.github.com>
+Date:   Wed Apr 10 01:41:32 2024 +0200
+
+    Call method filterOddLengthStrings in main class
+
+commit f67c4757cfb9be88112434e801190b3c1584d1f4
+Author: Blagoja Karakashev <154978538+BlagojaK03@users.noreply.github.com>
+Date:   Wed Apr 10 01:08:27 2024 +0200
+
+    Fix wrong condition in filterOddLengthStrings
+
+commit 2153ee1874ac9332e5f5018186b73eb6dab9d8db
+Author: BlagojaK03 <blagoja.karakashev@students.finki.ukim.mk>
+Date:   Tue Apr 9 01:15:54 2024 +0200
+
+    Add starter code
+
+commit da5087bf9ce11a70df2c22bebb368a76b9557251
+Author: Blagoja Karakashev <154978538+BlagojaK03@users.noreply.github.com>
+Date:   Tue Apr 9 00:59:34 2024 +0200
+
+    Initial commit
+
+
+$ git log bug1
+commit e3b455bdafb9d299f65403304c35d120a824fbdd (origin/bug1, bug1)
+Author: Blagoja Karakashev <154978538+BlagojaK03@users.noreply.github.com>
+Date:   Wed Apr 10 01:41:32 2024 +0200
+
+    Call method filterOddLengthStrings in main class
+
+commit f67c4757cfb9be88112434e801190b3c1584d1f4
+Author: Blagoja Karakashev <154978538+BlagojaK03@users.noreply.github.com>
+Date:   Wed Apr 10 01:08:27 2024 +0200
+
+    Fix wrong condition in filterOddLengthStrings
+
+commit 2153ee1874ac9332e5f5018186b73eb6dab9d8db
+Author: BlagojaK03 <blagoja.karakashev@students.finki.ukim.mk>
+Date:   Tue Apr 9 01:15:54 2024 +0200
+
+    Add starter code
+
+commit da5087bf9ce11a70df2c22bebb368a76b9557251
+Author: Blagoja Karakashev <154978538+BlagojaK03@users.noreply.github.com>
+Date:   Tue Apr 9 00:59:34 2024 +0200
+
+    Initial commit
+
+
+$ git log bug2
+commit 0764388a39df19ccdf30d431e7c3d9a03f07d1b2 (HEAD -> bug2, origin/master, origin/bug2, master)
+Author: Blagoja Karakashev <154978538+BlagojaK03@users.noreply.github.com>
+Date:   Wed Apr 10 01:48:36 2024 +0200
+
+    Call method makeBigStringFrom in main class
+
+commit 88dd26163e9dec734f584f144a69007afb944fae
+Date:   Wed Apr 10 01:24:16 2024 +0200
+
+
+commit e3b455bdafb9d299f65403304c35d120a824fbdd (origin/bug1, bug1)
+Author: Blagoja Karakashev <154978538+BlagojaK03@users.noreply.github.com>
+Date:   Wed Apr 10 01:41:32 2024 +0200
+
+    Call method filterOddLengthStrings in main class
+
+commit f67c4757cfb9be88112434e801190b3c1584d1f4
+Author: Blagoja Karakashev <154978538+BlagojaK03@users.noreply.github.com>
+Date:   Wed Apr 10 01:08:27 2024 +0200
+
+    Fix wrong condition in filterOddLengthStrings
+
+commit 2153ee1874ac9332e5f5018186b73eb6dab9d8db
+Author: BlagojaK03 <blagoja.karakashev@students.finki.ukim.mk>
+Date:   Tue Apr 9 01:15:54 2024 +0200
+
+    Add starter code
+
+commit da5087bf9ce11a70df2c22bebb368a76b9557251
+Author: Blagoja Karakashev <154978538+BlagojaK03@users.noreply.github.com>
+Date:   Tue Apr 9 00:59:34 2024 +0200
+
+    Initial commit
